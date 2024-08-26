@@ -17,12 +17,14 @@ interface ConvexClientProviderProps {
 
 const convexUrl = process.env.NEXT_PUBLIC_CONVEX_URL;
 const convex = new ConvexReactClient(convexUrl!);
+const clerkFrontendApi = process.env.NEXT_PUBLIC_CLERK_FRONTEND_API
 
 export const ConvexClientProvider = ({
   children,
 }: ConvexClientProviderProps) => {
   return (
-      <ClerkProvider afterSignUpUrl="/sign-up"
+      <ClerkProvider 
+      afterSignUpUrl="/sign-up"
       appearance={{
         baseTheme:dark,
         variables:{

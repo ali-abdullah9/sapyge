@@ -8,7 +8,7 @@ function Topbar() {
     <nav className="topbar">
       <Link href="/" className="flex items-center gap-4">
         <Image src="/logo.svg" alt="sapyge-logo" width={50} height={50} />
-        <p className="text-heading3-bold text-light-1 max-xs:hidden">Sapyge</p>
+        <p className="text-heading3-bold text-light-1 max-xs:hidden">Sapyge.</p>
       </Link>
       <div className="flex items-center gap-1">
         <div className="block md:hidden">

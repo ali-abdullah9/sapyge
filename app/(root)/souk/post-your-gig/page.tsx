@@ -1,5 +1,9 @@
+import Header from "@/components/shared/Header";
+
 function page() {
-  return <div>post-your-gig</div>;
+  return <> 
+  <Header/>
+  <div>post-your-gig</div></>;
 }
 
 export default page;

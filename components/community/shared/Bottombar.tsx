@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
 import { sidebarLinks } from "@/constants";
 
 function Bottombar() {
@@ -21,7 +20,7 @@ function Bottombar() {
             <Link
               href={link.route}
               key={link.label}
-              className={`bottombar_link ${isActive && "bg-primary-500"}`}
+              className={`bottombar_link ${isActive && "bg-color-1"}`}
             >
               <Image
                 src={link.imgURL}

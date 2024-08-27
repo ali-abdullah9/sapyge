@@ -11,9 +11,9 @@ html {
 }
 
 body {
-  color: white;
-  background: #161925;
+  @apply text-light-1 bg-dark-1; /* Ensure body text and background are set for dark theme */
 }
+
 
 /* Communtiy */
 
@@ -177,6 +177,16 @@ body {
 /*Community*/
 
 /*Index*/
-
+.cl-avatarBox  {
+  height: 40px;
+  width:40px;
+}
 /*Index*/
+
+/*Clerk*/
+.cl-avatarBox  {
+  height: 40px;
+  width:40px;
+}
+/*Clerk*/
 

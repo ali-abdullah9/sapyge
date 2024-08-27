@@ -45,25 +45,3 @@ export const sidebarLinks = [
     { value: "requests", label: "Requests", icon: "/assets/request.svg" },
   ];
   
-  export const navigation = [
-    {
-      id: "0",
-      title: "Tools",
-      url: "/tools",
-    },
-    {
-      id: "1",
-      title: "Confrencing",
-      url: "/conferencing",
-    },
-    {
-      id: "2",
-      title: "Community",
-      url: "/community",
-    },
-    {
-      id: "3",
-      title: "Souk",
-      url: "/souk",
-    } 
-  ];

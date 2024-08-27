@@ -1,5 +1,9 @@
+import Header from "@/components/shared/Header";
+
 function page() {
-    return <div>soaiw</div>;
+    return <> 
+    <Header/>
+    <div>soaiw</div></>;
   }
   
   export default page;

@@ -1,9 +1,7 @@
 "use client";             
 
 
-import AccountProfile from "@/components/community/forms/AccountProfile";
-import { api } from "@/convex/_generated/api";
-import { getUser } from "@/convex/users";
+// import AccountProfile from "@/components/community/forms/AccountProfile";
 import { useUser } from "@clerk/nextjs";
 
  function Page() {

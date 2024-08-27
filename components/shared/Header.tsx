@@ -1,99 +1,129 @@
-"use client";
-
-import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { UserButton, SignUpButton, SignInButton,SignedIn, SignedOut } from "@clerk/nextjs";
-import { usePathname } from "next/navigation";
-import { disablePageScroll, enablePageScroll } from "scroll-lock";
-import { navigation } from "@/constants";
-import MenuSvg from "@/public/svg/MenuSvg";
-import { HamburgerMenu } from "@/components/designs/header";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+
+import {
+  UserButton,
+  SignUpButton,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+} from "@clerk/nextjs";
+import Navbar from "./Navbar";
+import Hamburgerbar from "./Hamburgerbar";
 
 
-const Header: React.FC = () => {
-  const pathname = usePathname();
-  const [openNavigation, setOpenNavigation] = useState<boolean>(false);
-
-  const toggleNavigation = () => {
-    if (openNavigation) {
-      setOpenNavigation(false);
-      enablePageScroll();
-    } else {
-      setOpenNavigation(true);
-      disablePageScroll();
-    }
-  };
-
-  const handleClick = () => {
-    if (!openNavigation) return;
-
-    enablePageScroll();
-    setOpenNavigation(false);
-  };
-
+const Header = () => {
   return (
-    <div
-      className={` top-0 left-0 w-full z-50 border-b border-n-6 lg:bg-dark-1 lg:backdrop-blur-sm ${
-        openNavigation ? "bg-dark-1" : "bg-dark-1 backdrop-blur-sm  flex flex-row"
-      }`}
-    >
-
-      <Link href="/" className="flex items-center gap-4">
-        <Image src="/logo.svg" alt="sapyge-logo" width={50} height={50} />
-        <p className=" mr-44  text-heading3-bold text-light-1 max-xs:hidden">Sapyge</p>
-      </Link>
-
-      {navigation.map((item) => (
-        <Link
-          key={item.id}
-          href={item.url}
-          onClick={handleClick}
-          className={` flex justify-center items-center  font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
-            item.url === pathname ? "z-2 lg:text-n-1" : "lg:text-n-1/50"
-          } lg:leading-5 lg:hover:text-n-1 xl:px-12 `}
-        >
-          {item.title}
-        </Link>
-      ))}
-
-      <HamburgerMenu />
+    <nav>
       <SignedIn>
-      <div className="ml-96 flex flex-row gap-4 justify-end">
-        
-        {/* <SignUpButton />
-        <SignInButton /> */}
+        <div className="flex flex-row top-0 left-0 w-full h-16 z-50 border-b border-n-6 lg:h-16 lg:backdrop-blur-sm">
+          <div className="flex-1 flex items-center">
+            <Link href="/" className="flex items-center gap-2 py-2">
+              <Image src="/logo.svg" alt="sapyge-logo" width={50} height={50} />
+              <p className="text-heading3-bold text-light-1 max-xs:hidden">
+                Sapyge.
+              </p>
+            </Link>
+          </div>
+          <div className="hidden md-980:flex flex-1 items-center space-x-4 py-4">
+            <Navbar />
+          </div>
 
-      <UserButton afterSignOutUrl="/" />
-      <h1 className="flex items-center justify-center ">Profile</h1>
-      <button
-        className="ml-auto lg:hidden"
-        onClick={toggleNavigation}
-      >
-        <MenuSvg openNavigation={openNavigation} />
-      </button></div>
+          <div className="flex-1 text-right flex items-center justify-end">
+            <div className="flex flex-row gap-4 py-4 px-8">
+              <UserButton />
+              <h1 className="hidden md-980:block pt-2 hover:text-color-1 cursor-pointer">
+                Profile
+              </h1>
+              <Sheet>
+                <SheetTrigger>
+                  <Image
+                    src="/hamburger-menu.svg"
+                    alt="Hamburger-Menu"
+                    width={36}
+                    height={36}
+                    className="cursor-pointer  md-980:hidden"
+                  />
+                </SheetTrigger>
+                <SheetContent className="bg-dark-1 p-4 border-color-1">
+                  <SheetHeader>
+                    <SheetTitle className="text-3xl font-bold text-light-1 mb-8 hover:text-color-1 cursor-not-allowed	">
+                      Menu
+                    </SheetTitle>
+                    <SheetDescription>
+                      <div className="space-y-4 ">
+                        <Hamburgerbar />
+                      </div>
+                    </SheetDescription>
+                  </SheetHeader>
+                </SheetContent>
+              </Sheet>
+            </div>
+          </div>
+        </div>
       </SignedIn>
+
       <SignedOut>
-      <div className="ml-64 flex flex-row gap-4 justify-end">
-        
-        <SignUpButton ><button className="focus:outline-none mt-4 h-12 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Sign In</button>
-        </SignUpButton >
-        <SignInButton >
-        <button  className="focus:outline-none  text-white mt-4 h-12 bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Sign Up</button>
-        </SignInButton >
+        <div className="flex flex-row top-0 left-0 w-full h-16 z-50  border-n-6 lg:h-16 lg:backdrop-blur-sm">
+          <div className="flex-1 flex items-center">
+            <Link href="/" className="flex items-center gap-2 py-2">
+              <Image src="/logo.svg" alt="sapyge-logo" width={50} height={50} />
+              <p className="text-heading3-bold text-light-1 max-xs:hidden">
+                Sapyge.
+              </p>
+            </Link>
+          </div>
 
+          <div className="hidden md-980:flex flex-1 items-center space-x-4 py-4">
+            <Navbar/>
 
-      <button
-        className="ml-auto lg:hidden"
-        onClick={toggleNavigation}
-      >
-        <MenuSvg openNavigation={openNavigation} />
-      </button></div>
+          </div>
+          <div className="flex flex-row gap-4 justify-end py-4 px-8">
+            <SignUpButton>
+              <button className="focus:outline-none px-5 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm   dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                Sign Up
+              </button>
+            </SignUpButton>
+            <SignInButton>
+              <button className="focus:outline-none px-5 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm  dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
+                Sign In
+              </button>
+            </SignInButton>
+            <Sheet>
+              <SheetTrigger>
+                <Image
+                  src="/hamburger-menu.svg"
+                  alt="Hamburger-Menu"
+                  width={36}
+                  height={36}
+                  className="cursor-pointer  md-980:hidden"
+                />
+              </SheetTrigger>
+              <SheetContent className="bg-dark-1 p-4 border-color-1">
+                <SheetHeader>
+                  <SheetTitle className="text-3xl font-bold text-light-1 mb-8 hover:text-color-1 cursor-not-allowed	">
+                    Menu
+                  </SheetTitle>
+                  <SheetDescription>
+                    <div className="flex flex-col space-y-4 ">
+                    <Hamburgerbar />
+                    </div>
+                  </SheetDescription>
+                </SheetHeader>
+              </SheetContent>
+            </Sheet>
+          </div>
+        </div>
       </SignedOut>
-      
-      
-      
-    </div>
+    </nav>
   );
 };
 

@@ -3,7 +3,7 @@ import Header from "@/components/shared/Header";
 function page() {
     return <> 
     <Header/>
-    <div>syntax-scan</div></>;
+    <div>structured</div></>;
   }
   
   export default page;

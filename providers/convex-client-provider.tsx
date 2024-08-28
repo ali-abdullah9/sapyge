@@ -26,6 +26,9 @@ export const ConvexClientProvider = ({
       <ClerkProvider 
       afterSignUpUrl="/sign-up"
       appearance={{
+        layout:{
+            logoImageUrl: "/logo.svg"
+        },
         baseTheme:dark,
         variables:{
           colorBackground : "black",

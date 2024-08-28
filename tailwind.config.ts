@@ -196,6 +196,8 @@ module.exports = {
           4: "#7ADB78",
           5: "#858DFF",
           6: "#FF98E2",
+          7: "#CC4F37",
+          8: "#007ACC"
         },
         stroke: {
           1: "#26242C",
@@ -250,8 +252,9 @@ module.exports = {
       },
       backgroundImage: {
         "radial-gradient": "radial-gradient(var(--tw-gradient-stops))",
-        "conic-gradient":
-          "conic-gradient(from 225deg, #FFC876, #79FFF7, #9F53FF, #FF98E2, #FFC876)",
+        "conic-gradient":"conic-gradient(from 225deg, #FFC876, #79FFF7, #9F53FF, #FF98E2, #FFC876)",
+        "confer-hero": "url('/Images/conferecing-hero.png')", 
+        "confer-video": "url('/Images/confer-video5.png')" ,
       },
       boxShadow: {
         "count-badge": "0px 0px 6px 2px rgba(219, 188, 159, 0.30)",

@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <nav>
       <SignedIn>
-        <div className="flex flex-row top-0 left-0 w-full h-16 z-50 border-b border-n-6 lg:h-16 lg:backdrop-blur-sm">
+        <div className="flex flex-row border-b border-n-6 lg:h-16 lg:backdrop-blur-sm">
           <div className="flex-1 flex items-center">
             <Link href="/" className="flex items-center gap-2 py-2">
               <Image src="/logo.svg" alt="sapyge-logo" width={50} height={50} />
@@ -60,7 +60,8 @@ const Header = () => {
                     </SheetTitle>
                     <SheetDescription>
                       <div className="space-y-4 ">
-                        <Hamburgerbar />
+                        {/* <Hamburgerbar /> */}
+                        <Navbar />
                       </div>
                     </SheetDescription>
                   </SheetHeader>

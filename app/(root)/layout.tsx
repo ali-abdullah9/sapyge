@@ -9,6 +9,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Sapyge",
   description: "A space for sage",
+  icons:{
+    icon: '/logo.svg'
+  }
 };
 
 export default function RootLayout({
@@ -18,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-dark-1`}>
+      <body className={`${inter.className} bg-dark-1 `}>
         <ConvexClientProvider>
           <main className="">
            

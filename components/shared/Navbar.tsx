@@ -7,6 +7,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
+  NavigationMenuViewport
 } from "@/components/ui/navigation-menu";
 
 const Navbar = () => {
@@ -21,14 +22,19 @@ const Navbar = () => {
       <NavigationMenuContent >
         <NavigationMenuLink className="flex flex-col bg-dark-2 whitespace-nowrap" >
           <Link
-                    href="/souk/find-your-gig"
-                    className="px-8 py-4 mt-2 text-sm font-semibold text-color-1 bg-dark-1 rounded-lg dark:bg-dark-1 dark:hover:bg-dark-2 dark:focus:bg-dark-2 dark:focus:text-color-1 dark:hover:text-color-1 dark:text-color-1 md:mt-0 hover:text-color-1 focus:text-color-1 hover:bg-dark-2 focus:bg-dark-2 focus:outline-none focus:shadow-outline">
-                    Find your Gig
+                    href="/tools/soaiw"
+                    className="px-8 py-4 mt-2 text-sm font-semibold text-light-1 bg-dark-1 rounded-lg dark:bg-dark-1 dark:hover:bg-dark-2 dark:focus:bg-dark-2 dark:focus:text-color-1 dark:hover:text-color-1 dark:text-color-1 md:mt-0 hover:text-color-1 focus:text-color-1 hover:bg-dark-2 focus:bg-dark-2 focus:outline-none focus:shadow-outline">
+                    Soaiw
                   </Link>
                   <Link
-                    href="/souk/find-your-gig"
-                    className="px-8 py-4 mt-2 text-sm font-semibold text-color-1 bg-dark-1 rounded-lg dark:bg-dark-1 dark:hover:bg-dark-2 dark:focus:bg-dark-2 dark:focus:text-color-1 dark:hover:text-color-1 dark:text-color-1 md:mt-0 hover:text-color-1 focus:text-color-1 hover:bg-dark-2 focus:bg-dark-2 focus:outline-none focus:shadow-outline">
-                    Find your Gig
+                    href="/tools/scripter"
+                    className="px-8 py-4 mt-2 text-sm font-semibold text-light-1 bg-dark-1 rounded-lg dark:bg-dark-1 dark:hover:bg-dark-2 dark:focus:bg-dark-2 dark:focus:text-color-1 dark:hover:text-color-1 dark:text-color-1 md:mt-0 hover:text-color-1 focus:text-color-1 hover:bg-dark-2 focus:bg-dark-2 focus:outline-none focus:shadow-outline">
+                   Scripter
+                  </Link>
+                  <Link
+                    href="/tools/syntax-scan"
+                    className="px-8 py-4 mt-2 text-sm font-semibold text-light-1 bg-dark-1 rounded-lg dark:bg-dark-1 dark:hover:bg-dark-2 dark:focus:bg-dark-2 dark:focus:text-color-1 dark:hover:text-color-1 dark:text-color-1 md:mt-0 hover:text-color-1 focus:text-color-1 hover:bg-dark-2 focus:bg-dark-2 focus:outline-none focus:shadow-outline">
+                   Syntax Scan
                   </Link>
                   
                   </NavigationMenuLink>
@@ -46,14 +52,14 @@ const Navbar = () => {
       <NavigationMenuContent>
         <NavigationMenuLink className="flex flex-col bg-dark-2 whitespace-nowrap">
           <Link
-                    href="/souk/find-your-gig"
-                    className="px-8 py-4 mt-2 text-sm font-semibold text-color-1 bg-dark-1 rounded-lg dark:bg-dark-1 dark:hover:bg-dark-2 dark:focus:bg-dark-2 dark:focus:text-color-1 dark:hover:text-color-1 dark:text-color-1 md:mt-0 hover:text-color-1 focus:text-color-1 hover:bg-dark-2 focus:bg-dark-2 focus:outline-none focus:shadow-outline">
-                    Find your Gig
+                    href="/conferencing/structured"
+                    className="px-8 py-4 mt-2 text-sm font-semibold text-light-1 bg-dark-1 rounded-lg dark:bg-dark-1 dark:hover:bg-dark-2 dark:focus:bg-dark-2 dark:focus:text-color-1 dark:hover:text-color-1 dark:text-color-1 md:mt-0 hover:text-color-1 focus:text-color-1 hover:bg-dark-2 focus:bg-dark-2 focus:outline-none focus:shadow-outline">
+                    Structured
                   </Link>
                   <Link
-                    href="/souk/find-your-gig"
-                    className="px-8 py-4 mt-2 text-sm font-semibold text-color-1 bg-dark-1 rounded-lg dark:bg-dark-1 dark:hover:bg-dark-2 dark:focus:bg-dark-2 dark:focus:text-color-1 dark:hover:text-color-1 dark:text-color-1 md:mt-0 hover:text-color-1 focus:text-color-1 hover:bg-dark-2 focus:bg-dark-2 focus:outline-none focus:shadow-outline">
-                    Find your Gig
+                    href="/conferencing/spontaneous"
+                    className="px-8 py-4 mt-2 text-sm font-semibold text-light-1 bg-dark-1 rounded-lg dark:bg-dark-1 dark:hover:bg-dark-2 dark:focus:bg-dark-2 dark:focus:text-color-1 dark:hover:text-color-1 dark:text-color-1 md:mt-0 hover:text-color-1 focus:text-color-1 hover:bg-dark-2 focus:bg-dark-2 focus:outline-none focus:shadow-outline">
+                    Spontaneous
                   </Link>
                   
                   </NavigationMenuLink>
@@ -84,16 +90,18 @@ const Navbar = () => {
                     Find your Gig
                   </Link>
                   <Link
-                    href="/souk/find-your-gig"
+                    href="/souk/post-your-gig"
                     className="px-8 py-4 mt-2 text-sm font-semibold text-light-1 bg-dark-1 rounded-lg dark:bg-dark-1 dark:hover:bg-dark-2 dark:focus:bg-dark-2 dark:focus:text-color-1 dark:hover:text-color-1 dark:text-color-1 md:mt-0 hover:text-color-1 focus:text-color-1 hover:bg-dark-2 focus:bg-dark-2 focus:outline-none focus:shadow-outline">
-                    Find your Gig
+                    Post your Gig
                   </Link>
                   
                   </NavigationMenuLink>
       </NavigationMenuContent>
     </NavigationMenuItem>
   </NavigationMenuList>
+  <NavigationMenuViewport className="bg-color-1" />
 </NavigationMenu>
+
 
 </div>
 

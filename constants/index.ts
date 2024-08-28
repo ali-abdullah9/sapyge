@@ -45,3 +45,31 @@ export const sidebarLinks = [
     { value: "requests", label: "Requests", icon: "/assets/request.svg" },
   ];
   
+  export const ConferSidebarLinks = [
+    {
+      imgURL: '/icons/Home.svg',
+      route: '/conferencing/structured',
+      label: 'Home',
+    },
+  
+    {
+      imgURL: '/icons/upcoming.svg',
+      route: '/conferencing/structured/upcoming',
+      label: 'Upcoming',
+    },
+    {
+      imgURL: '/icons/previous.svg',
+      route: '/conferencing/structured/previous',
+      label: 'Previous',
+    },
+    {
+      imgURL: '/icons/Video.svg',
+      route: '/conferencing/structured/recordings',
+      label: 'Recordings',
+    },
+    {
+      imgURL: '/icons/add-personal.svg',
+      route: '/conferencing/structured/personal-room',
+      label: 'Personal Room',
+    },
+  ];

@@ -5,9 +5,9 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@clerk/nextjs";
 
-import { sidebarLinks } from "@/constants";
+import { ConferSidebarLinks } from "@/constants";
 
-const LeftSidebar = () => {
+const Sidebar = () => {
   const pathname = usePathname();
 
   const { userId } = useAuth();
@@ -15,9 +15,9 @@ const LeftSidebar = () => {
   return (
     <section className="custom-scrollbar leftsidebar">
       <div className="flex w-full flex-1 flex-col gap-6 px-6">
-        {sidebarLinks.map((link) => {
+        {ConferSidebarLinks.map((link) => {
           const isActive =
-            (pathname.includes(link.route) && link.route.length > 0) ||
+            (pathname.startsWith(`link.route`) ) ||
             pathname === link.route;
 
           if (link.route === "/profile") link.route = `${link.route}/${userId}`;
@@ -44,4 +44,4 @@ const LeftSidebar = () => {
   );
 };
 
-export default LeftSidebar;
+export default Sidebar;

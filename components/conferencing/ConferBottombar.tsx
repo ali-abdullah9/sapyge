@@ -3,18 +3,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { sidebarLinks } from "@/constants";
+import { ConferSidebarLinks } from "@/constants";
 
-function Bottombar() {
+function ConferBottombar() {
   const pathname = usePathname();
 
   return (
     <section className="bottombar">
       <div className="bottombar_container">
-        {sidebarLinks.map((link) => {
+        {ConferSidebarLinks.map((link) => {
           const isActive =
-            (pathname.includes(link.route) && link.route.length > 0) ||
-            pathname === link.route;
+          (pathname.startsWith(`link.route`) ) ||
+          pathname === link.route;
 
           return (
             <Link
@@ -41,4 +41,4 @@ function Bottombar() {
   );
 }
 
-export default Bottombar;
+export default ConferBottombar;

@@ -1,9 +1,34 @@
-import Header from "@/components/shared/Header";
+"use client";
 
-function page() {
-  return <> 
-  <Header/>
-  <div>find-your-gig</div></>;
-}
+import { useConvexAuth, useMutation } from "convex/react";
+import { useEffect, useState } from "react";
+import { api } from "@/convex/_generated/api";
+import { GigList } from "./_components/gig-list";
 
-export default page;
+interface DashboardProps {
+    searchParams: {
+        search?: string;
+        favorites?: string;
+        filter?: string;
+    };
+};
+
+const Dashboard = ({
+    searchParams
+}: DashboardProps) => {
+    const store = useMutation(api.users.store);
+    useEffect(() => {
+        const storeUser = async () => {
+            await store({});
+        }
+        storeUser();
+    }, [store])
+    return (
+        <GigList
+            query={searchParams}
+        />
+        
+    );
+};
+
+export default Dashboard;

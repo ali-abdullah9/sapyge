@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "../globals.css";
 import { ConvexClientProvider } from "@/providers/convex-client-provider";
 import Header from "@/components/shared/Header";
+import { ThemeProvider } from "@/components/ui/theme-providers"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,11 +22,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-dark-1 `}>
+      <body className={`${inter.className} `}>
         <ConvexClientProvider>
           <main className="">
-           
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
             {children}
+            </ThemeProvider>
           </main>
         </ConvexClientProvider>
       </body>

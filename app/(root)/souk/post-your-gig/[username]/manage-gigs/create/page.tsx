@@ -17,7 +17,7 @@ const CreateGig = ({
     params
 }: CreateGigProps) => {
     return (
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-4">
             <CreateForm
                 username={params.username}
             />

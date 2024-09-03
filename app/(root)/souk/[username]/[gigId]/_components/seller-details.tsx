@@ -38,13 +38,13 @@ export const SellerDetails = ({
     const languagesString = languages.map((language) => language.language).join(", ");
 
     const handleContactClick = () => {
-        router.push(`/inbox/${seller.username}`);
+        router.push(`/souk/inbox/${seller.username}`);
     }
 
     return (
         <div className="space-y-3">
             <div className="flex space-x-4">
-                <Link href={`/${seller.username}`}>
+                <Link href={`/souk/${seller.username}`}>
                     <Avatar className="w-20 h-20">
                         <AvatarImage src={seller.profileImageUrl || "/profile-icon.svg"} />
                         <AvatarFallback>{seller.username.charAt(0)}</AvatarFallback>

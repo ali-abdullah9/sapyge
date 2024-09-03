@@ -24,7 +24,6 @@ export const Form = ({ chatId }: FormProps) => {
 
     const handleSendMessage = async () => {
         if (message === "") return;
-        console.log("message sent");
         const temp = message;
         setMessage("");
         await sendMessage({
@@ -42,7 +41,7 @@ export const Form = ({ chatId }: FormProps) => {
     }
 
     return (
-        <div className="relative px-2 sm:px-12 md:px-52 lg:pr-[500px] 2xl:px-96 w-full">
+        <div className="relative px-2 sm:px-12 md:px-52 lg:pr-[500px] 2xl:px-96">
             <Input
                 placeholder="Talk to soaiw"
                 className="border-[1px] border-neutral-500 ring-none rounded-xl bg-inherit text-neutral-200 placeholder:text-neutral-400 h-12"

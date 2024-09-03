@@ -49,7 +49,7 @@ export const ContentEditor = ({
         <div className="space-y-4 ">
             <div>
                 <Label htmlFor="title">Title:</Label>
-                <Input className="text-dark-1" id="title" placeholder="title" value={title} onChange={(e) => setTitle(e.target.value)} />
+                <Input  id="title" placeholder="title" value={title} onChange={(e) => setTitle(e.target.value)} />
             </div>
             <div className="">
                 <Label htmlFor="price">Price (USD):</Label>

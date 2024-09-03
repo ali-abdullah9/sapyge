@@ -17,7 +17,6 @@ export const Body = ({ chatId }: BodyProps) => {
     console.log(messagesSoaiw)
     const { user } = useUser();
     const scrollRef = useRef<HTMLDivElement>(null);
-    const [showButton, setShowButton] = useState(false);
 
     useEffect(() => {
         scrollToBottom();
@@ -32,7 +31,7 @@ export const Body = ({ chatId }: BodyProps) => {
     return (
         <>
             <ScrollArea
-                className="max-h-[calc(100%-150px)] h-full w-full flex-1"
+                className="max-h-[calc(100%-250px)] "
             >
                 <div className="px-4 sm:px-12 md:px-52 2xl:px-[430px] relative">
                     {messagesSoaiw.map((message) => (

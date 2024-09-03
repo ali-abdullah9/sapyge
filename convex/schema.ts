@@ -14,7 +14,7 @@ export default defineSchema({
         customTag: v.optional(v.string()),
         stripeAccountId: v.optional(v.string()),
         stripeAccountSetupComplete: v.optional(v.boolean()),
-        model: v.union(v.literal("gpt-3.5-turbo-1106"), v.literal("gpt-4-0125-preview")),
+        model: v.union(v.literal("gpt-3.5-turbo-1106"), v.literal("gpt-4o-mini")),
     })
         .index("by_token", ["tokenIdentifier"])
         .index("by_username", ["username"]),

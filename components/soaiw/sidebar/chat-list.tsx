@@ -20,7 +20,7 @@ export const ChatList = () => {
     }
 
     return (
-        <div className="flex flex-col flex-1 overflow-y-auto">
+        <div className="flex flex-col flex-1 overflow-y-auto ">
             {chats.map((chat) => (
                 <ChatBox
                     key={chat._id}

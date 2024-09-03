@@ -6,7 +6,8 @@ import { useQuery } from "convex/react";
 import { useRouter } from "next/navigation";
 import { Form } from "./_components/form";
 import { Header } from "./_components/header";
-// import { Body } from "./_components/body";
+import { Body } from "./_components/body";
+import { useEffect } from "react";
 
 interface ChatPageProps {
     params: {
@@ -24,15 +25,15 @@ const Chat = ({ params }: ChatPageProps) => {
     }
 
 
+
+
     return (
-        <div className="bg-neutral-800 w-full h-full flex flex-col bg-logo-gradient">
+        <div className=" w-full h-full flex flex-col bg-logo-gradient">
             <Header />
-            <div className="flex flex-col h-full w-full">
-                {/* <Body chatId={params.chatId} /> */}
-                <div className="w-full fixed bottom-0 ">
+                <Body chatId={params.chatId} />
+                <div className=" bottom-0 bg-inherit mb-8">
                     <Form chatId={params.chatId} />
-                    <p className="w-full text-center text-xs text-red-400 my-2 lg:pr-[300px]">Soaiw could make errors. Consider checking important information.</p>
-                </div>
+
             </div>
         </div>
     )

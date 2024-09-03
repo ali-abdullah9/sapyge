@@ -34,7 +34,7 @@ export const store = mutation({
             about: "",
             username: identity.nickname!,
             profileImageUrl: identity.profileUrl,
-            model: "gpt-4-0125-preview"
+            model: "gpt-4o-mini"
         });
 
         return userId;
@@ -204,7 +204,7 @@ export const getCountryByUsername = query({
 });
 
 export const selectGPT = mutation({
-    args: { model: v.union(v.literal("gpt-3.5-turbo-1106"), v.literal("gpt-4-0125-preview")) },
+    args: { model: v.union(v.literal("gpt-3.5-turbo-1106"), v.literal("gpt-4o-mini")) },
     handler: async (ctx, args) => {
         const identity = await ctx.auth.getUserIdentity();
         if (!identity) {

@@ -42,7 +42,7 @@ const Navbar = () => {
     }
 
     const onClickInbox = () => {
-        router.push("/inbox");
+        router.push("/souk/inbox");
     }
 
     const clearFilters = () => {

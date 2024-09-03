@@ -14,6 +14,7 @@ import { api } from "@/convex/_generated/api";
 import { useApiMutation } from "@/hooks/use-api-mutation";
 import { Button } from "@/components/ui/button";
 import { ConfirmModal } from "@/components/souk/confirm-modal";
+import { useRenameModal } from "@/store/use-rename-modal";
 // import { useRenameModal } from "@/store/use-rename-modal";
 
 interface ActionsProps {
@@ -29,7 +30,7 @@ export const Actions = ({
     sideOffset,
     storageId,
 }: ActionsProps) => {
-    // const { onOpen } = useRenameModal();
+    const { onOpen } = useRenameModal();
     const { mutate, pending } = useApiMutation(api.gigMedia.remove);
 
     const onDelete = () => {

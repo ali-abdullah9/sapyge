@@ -121,7 +121,7 @@ const Edit = ({ params }: EditdPageProps) => {
 
 
     return (
-        <main className="bg-logo-gradient">
+        <main >
             <div className="space-y-12 2xl:px-64 xl:px-36 md:px-12 px-12 ">
                 <div className="flex justify-end pr-2 space-x-2">
                     <Button disabled={publishPending || unpublishPending} variant={"blue"}  onClick={onPublish}>

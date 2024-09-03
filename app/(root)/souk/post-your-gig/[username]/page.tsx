@@ -6,6 +6,7 @@ import { api } from "@/convex/_generated/api";
 import { ReviewsStats } from "../../[username]/_components/reviews/reviews-stats";
 import { Reviews } from "../../[username]/_components/reviews/reviews";
 import { MyGigsList } from "../../[username]/_components/my-gig-list";
+import Header from "@/components/shared/Header";
 
 interface SellerPageProps {
   params: {
@@ -45,7 +46,7 @@ const SellerPage = ({ params }: SellerPageProps) => {
     : "";
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-12 mt-4">
       <div className="flex flex-col sm:flex-row w-full sm:justify-center p-0 sm:p-6 md:p-16 space-x-0 sm:space-x-3 lg:space-x-16">
         <div className="w-full space-y-8 max-w-[700px]">
           <ProfileCard seller={seller} reviews={reviews} />

@@ -11,15 +11,15 @@ export const MessageBox = ({
     userImageUrl
 }: MessageBoxProps) => {
     const nameString = message.role === "user" ? "You" : "Soaiw";
-    const imageUrl = message.role === "user" ? userImageUrl : "/images/confer-hero.svg";
+    const imageUrl = message.role === "user" ? userImageUrl : "/file (2).png";
 
     return (
         <div
-            className="flex space-x-3 items-start mb-10 max-w-[calc(80%)] md:max-w-full text-wrap"
+            className="flex space-x-3 items-start mb-10 max-w-[calc(80%)] md:max-w-full text-wrap "
         >
-            <Avatar className="w-7 h-7 text-white fill-white">
-                <AvatarImage src={imageUrl} className="text-white fill-white" />
-                <AvatarFallback className="text-neutral-900 font-semibold">
+            <Avatar >
+                <AvatarImage src={imageUrl}/>
+                <AvatarFallback>
                     {nameString[0]}
                 </AvatarFallback>
             </Avatar>

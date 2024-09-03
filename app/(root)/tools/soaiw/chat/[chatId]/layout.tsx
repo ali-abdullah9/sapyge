@@ -12,7 +12,7 @@ export default function ChatLayout({ children }: ChatLayoutProps) {
             <Header />
             <div className="flex">
             <Sidebar />
-            <div className="h-screen w-full">
+            <div className="h-screen">
                 {children}
             </div>
             </div>

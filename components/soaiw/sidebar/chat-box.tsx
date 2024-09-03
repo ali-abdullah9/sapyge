@@ -46,7 +46,7 @@ export const ChatBox = ({
     }
 
     return (
-        <div key={chat.title} className={cn("group relative flex w-full p-2 rounded-md hover:bg-neutral-900 cursor-pointer text-zinc-400  hover:text-light-1", selected && "bg-neutral-800")} onClick={hadleClick}>
+        <div key={chat.title} className={cn("group relative flex w-full p-2 pr-[8rem] rounded-md hover:bg-neutral-900 cursor-pointer text-zinc-400  hover:text-light-1", selected && "bg-neutral-800")} onClick={hadleClick}>
             {isEditing ? (
                 <input
                     type="text"

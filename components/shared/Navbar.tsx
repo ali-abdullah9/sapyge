@@ -18,22 +18,22 @@ const Navbar = () => {
 <NavigationMenu>
   <NavigationMenuList>
     <NavigationMenuItem>
-      <NavigationMenuTrigger className="bg-dark-1 px-4 text-light-1 focus:bg-dark-2 hover:text-color-1 hover:bg-dark-2 data-[active]:bg-dark-2 data-[state=open]:bg-dark-2 dark:bg-dark-1 dark:text-light-1 dark:focus:bg-dark-2 dark:hover:bg-dark-2 font-code">Tools</NavigationMenuTrigger>
+      <NavigationMenuTrigger className="px-4 dark:bg-dark-1  dark:hover:text-color-1 font-code">Tools</NavigationMenuTrigger>
       <NavigationMenuContent >
-        <NavigationMenuLink className="flex flex-col bg-dark-2 whitespace-nowrap" >
+        <NavigationMenuLink className="flex flex-col whitespace-nowrap" >
           <Link
                     href="/tools/soaiw"
-                    className="px-8 py-4 mt-2 text-sm font-semibold text-light-1 bg-dark-1 rounded-lg dark:bg-dark-1 dark:hover:bg-dark-2 dark:focus:bg-dark-2 dark:focus:text-color-1 dark:hover:text-color-1 dark:text-color-1 md:mt-0 hover:text-color-1 focus:text-color-1 hover:bg-dark-2 focus:bg-dark-2 focus:outline-none focus:shadow-outline">
+                    className="px-8 py-4 mt-2 text-sm font-semibold hover:bg-dark-2 dark:hover:text-color-1">
                     Soaiw
                   </Link>
                   <Link
                     href="/tools/scripter"
-                    className="px-8 py-4 mt-2 text-sm font-semibold text-light-1 bg-dark-1 rounded-lg dark:bg-dark-1 dark:hover:bg-dark-2 dark:focus:bg-dark-2 dark:focus:text-color-1 dark:hover:text-color-1 dark:text-color-1 md:mt-0 hover:text-color-1 focus:text-color-1 hover:bg-dark-2 focus:bg-dark-2 focus:outline-none focus:shadow-outline">
+                    className="px-8 py-4 mt-2 text-sm font-semibold hover:bg-dark-2 dark:hover:text-color-1">
                    Scripter
                   </Link>
                   <Link
                     href="/tools/syntax-scan"
-                    className="px-8 py-4 mt-2 text-sm font-semibold text-light-1 bg-dark-1 rounded-lg dark:bg-dark-1 dark:hover:bg-dark-2 dark:focus:bg-dark-2 dark:focus:text-color-1 dark:hover:text-color-1 dark:text-color-1 md:mt-0 hover:text-color-1 focus:text-color-1 hover:bg-dark-2 focus:bg-dark-2 focus:outline-none focus:shadow-outline">
+                    className="px-8 py-4 mt-2 text-sm font-semibold hover:bg-dark-2 dark:hover:text-color-1">
                    Syntax Scan
                   </Link>
                   
@@ -46,19 +46,19 @@ const Navbar = () => {
 <NavigationMenu>
   <NavigationMenuList>
     <NavigationMenuItem>
-      <NavigationMenuTrigger className="bg-dark-1 px-4 text-light-1 focus:bg-dark-2 hover:text-color-1 hover:bg-dark-2 data-[active]:bg-dark-2 data-[state=open]:bg-dark-2 dark:bg-dark-1 dark:text-light-1 dark:focus:bg-dark-2 dark:hover:bg-dark-2 font-code">
+      <NavigationMenuTrigger className="px-4 dark:bg-dark-1  dark:hover:text-color-1 font-code">
         Conferencing
         </NavigationMenuTrigger>
       <NavigationMenuContent>
-        <NavigationMenuLink className="flex flex-col bg-dark-2 whitespace-nowrap">
+        <NavigationMenuLink className="flex flex-col whitespace-nowrap">
           <Link
                     href="/conferencing/structured"
-                    className="px-8 py-4 mt-2 text-sm font-semibold text-light-1 bg-dark-1 rounded-lg dark:bg-dark-1 dark:hover:bg-dark-2 dark:focus:bg-dark-2 dark:focus:text-color-1 dark:hover:text-color-1 dark:text-color-1 md:mt-0 hover:text-color-1 focus:text-color-1 hover:bg-dark-2 focus:bg-dark-2 focus:outline-none focus:shadow-outline">
+                    className="px-8 py-4 mt-2 text-sm font-semibold hover:bg-dark-2 dark:hover:text-color-1">
                     Structured
                   </Link>
                   <Link
                     href="/conferencing/spontaneous"
-                    className="px-8 py-4 mt-2 text-sm font-semibold text-light-1 bg-dark-1 rounded-lg dark:bg-dark-1 dark:hover:bg-dark-2 dark:focus:bg-dark-2 dark:focus:text-color-1 dark:hover:text-color-1 dark:text-color-1 md:mt-0 hover:text-color-1 focus:text-color-1 hover:bg-dark-2 focus:bg-dark-2 focus:outline-none focus:shadow-outline">
+                    className="px-8 py-4 mt-2 text-sm font-semibold hover:bg-dark-2 dark:hover:text-color-1">
                     Spontaneous
                   </Link>
                   
@@ -71,7 +71,7 @@ const Navbar = () => {
   <NavigationMenuList>
   <NavigationMenuItem>
             <Link href="/community" legacyBehavior passHref>
-              <NavigationMenuLink className="bg-dark-1 text-light-1 px-4 py-3 rounded-lg focus:bg-dark-2 hover:text-color-1 hover:bg-dark-2 data-[active]:bg-dark-2 data-[state=open]:bg-dark-2 dark:bg-dark-1 dark:text-light-1 dark:focus:bg-dark-2 dark:hover:bg-dark-2 font-code">
+              <NavigationMenuLink className="px-4 dark:bg-dark-1  dark:hover:text-color-1 font-code">
                 Community
               </NavigationMenuLink>
             </Link>
@@ -80,18 +80,18 @@ const Navbar = () => {
 </NavigationMenu><NavigationMenu>
   <NavigationMenuList>
     <NavigationMenuItem >
-      <NavigationMenuTrigger className="bg-dark-1 px-4  text-light-1 focus:bg-dark-2 hover:text-color-1 hover:bg-dark-2 data-[active]:bg-dark-2 data-[state=open]:bg-dark-2 dark:bg-dark-1 dark:text-light-1 dark:focus:bg-dark-2 dark:hover:bg-dark-2 font-code">
+      <NavigationMenuTrigger className="px-4 dark:bg-dark-1  dark:hover:text-color-1 font-code">
        Souk</NavigationMenuTrigger>
       <NavigationMenuContent >
-        <NavigationMenuLink className="flex flex-col bg-dark-1 whitespace-nowrap ">
+        <NavigationMenuLink className="flex flex-col whitespace-nowrap ">
           <Link
                     href="/souk/find-your-gig"
-                    className="px-8 py-4 mt-2 text-sm font-semibold text-light-1  rounded-lg dark:bg-dark-1 dark:hover:bg-dark-2 dark:focus:bg-dark-2 dark:focus:text-color-1 dark:hover:text-color-1 dark:text-color-1 md:mt-0 hover:text-color-1 focus:text-color-1 hover:bg-dark-2 focus:bg-dark-2 focus:outline-none focus:shadow-outline">
+                    className="px-8 py-4 mt-2 text-sm font-semibold hover:bg-dark-2 dark:hover:text-color-1">
                     Find your Gig
                   </Link>
                   <Link
                     href="/souk/post-your-gig"
-                    className="px-8 py-4 mt-2 text-sm font-semibold text-light-1 bg-dark-1 rounded-lg dark:bg-dark-1 dark:hover:bg-dark-2 dark:focus:bg-dark-2 dark:focus:text-color-1 dark:hover:text-color-1 dark:text-color-1 md:mt-0 hover:text-color-1 focus:text-color-1 hover:bg-dark-2 focus:bg-dark-2 focus:outline-none focus:shadow-outline">
+                    className="px-8 py-4 mt-2 text-sm font-semibold hover:bg-dark-2 dark:hover:text-color-1">
                     Post your Gig
                   </Link>
                   

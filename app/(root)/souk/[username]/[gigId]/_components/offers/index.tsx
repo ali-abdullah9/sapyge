@@ -31,7 +31,6 @@ export const Offers = ({ offers, sellerId, editUrl }: OffersProps) => {
               <TabsContent
                 key={offer._id}
                 value={offer._id}
-                className="bg-white"
               >
                 <Content offer={offer} sellerId={sellerId} editUrl={editUrl} />
               </TabsContent>

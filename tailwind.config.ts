@@ -182,6 +182,7 @@ module.exports = {
   			'logout-btn': '#FF5A5A',
   			'navbar-menu': 'rgba(16, 16, 18, 0.6)',
   			'dark-1': '#161925',
+			'dark-1.5': '#1F2333',
   			'dark-2': '#262B40',
   			'dark-3': '#101012',
   			'dark-4': '#5C6899',

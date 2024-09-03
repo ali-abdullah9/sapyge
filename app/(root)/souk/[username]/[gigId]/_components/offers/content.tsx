@@ -45,13 +45,13 @@ export const Content = ({
 
     const revisionText = offer.revisions === 1 ? "Revision" : "Revisions";
     return (
-        <div className="space-y-4 bg-white">
+        <div className="space-y-4">
             <div className="flex pb-4 font-bold items-center">
                 <h1>{offer.title}</h1>
                 <p className="ml-auto text-2xl">${offer.price}</p>
             </div>
             <p>{offer.description}</p>
-            <div className="flex flex-col font-semibold text-zinc-700 space-y-2">
+            <div className="flex flex-col font-semibold text-zinc-400 space-y-2">
                 <div className="flex space-x-2">
                     <Clock />
                     <p>{offer.delivery_days} Days Delivery</p>
@@ -63,12 +63,12 @@ export const Content = ({
             </div>
             {(currentUser?._id !== sellerId) && (
                 <>
-                    <Button className="w-full" onClick={handleOrderNow}>Order Now</Button>
+                    <Button className="w-full" onClick={handleOrderNow} variant={"link"}>Order Now</Button>
                     <Button className="w-full" onClick={handleSendMessage} variant={"ghost"}>Send Message</Button>
                 </>
             )}
             {(currentUser?._id === sellerId) && (
-                <Button className="w-full">
+                <Button className="w-full" variant={"blue"}>
                     <Link href={editUrl}>
                         Edit
                     </Link>

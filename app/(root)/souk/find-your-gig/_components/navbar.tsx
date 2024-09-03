@@ -25,6 +25,7 @@ import Loading from "@/components/auth/loading";
 import ConnectStripe from "./connect-stripe";
 import { TooltipProvider } from "./tooltip-provider";
 import { ListItem } from "./list-items";
+import Image from "next/image";
 
 
 const Navbar = () => {
@@ -52,6 +53,12 @@ const Navbar = () => {
         <>
             
             <div className="flex items-center gap-x-4 p-5 ">
+            <Link href="/" className="flex items-center gap-2 py-2">
+              <Image src="/logo.svg" alt="sapyge-logo" width={50} height={50} />
+              <p className="text-heading3-bold text-light-1 max-xs:hidden">
+                Sapyge.
+              </p>
+            </Link>
                 <div className="hidden lg:flex lg:flex-1">
                     <SearchInput />
                 </div>
@@ -92,7 +99,6 @@ const Navbar = () => {
                             </>
                         </DialogClose>
                     </DialogContent>
-                    {/* </ScrollArea> */}
                 </Dialog>
 
                 {currentUser && (

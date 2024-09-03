@@ -6,12 +6,15 @@ import { Star } from 'lucide-react'; // Importing Star component from Lucide
 import { Separator } from '@/components/ui/separator';
 import Image from 'next/image';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { api } from '@/convex/_generated/api';
+import { useQuery } from 'convex/react';
 
 interface ReviewBoxProps {
     review: ReviewFullType;
 }
 
 export const ReviewBox = ({ review }: ReviewBoxProps) => {
+    
     // Calculate average review score
     const averageScore = (review.communication_level + review.recommend_to_a_friend + review.service_as_described) / 3;
 
@@ -21,7 +24,7 @@ export const ReviewBox = ({ review }: ReviewBoxProps) => {
     return (
         <div className="flex space-x-4">
             <Avatar>
-                <AvatarImage src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="Avatar" />
+                <AvatarImage src="/profile-icon.svg" alt="Avatar" />
                 <AvatarFallback>{ }</AvatarFallback>
             </Avatar>
             <div className="flex flex-col space-y-2">

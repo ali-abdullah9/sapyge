@@ -74,7 +74,7 @@ export const GigCard = ({
     }
 
     return (
-        <Link href={`souk/post-your-gig/${seller?.username}/${id}`} >
+        <Link href={`/souk/${seller?.username}/${id}`} >
             <div className="group border rounded-lg flex flex-col justify-between overflow-hidden mt-8 ">
                 <div className="relative flex-1 bg-blue-50">
                     <ConvexImage

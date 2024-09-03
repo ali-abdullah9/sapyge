@@ -46,7 +46,7 @@ export const SellerDetails = ({
             <div className="flex space-x-4">
                 <Link href={`/${seller.username}`}>
                     <Avatar className="w-20 h-20">
-                        <AvatarImage src={seller.profileImageUrl || "https://github.com/shadcn.png"} />
+                        <AvatarImage src={seller.profileImageUrl || "/profile-icon.svg"} />
                         <AvatarFallback>{seller.username.charAt(0)}</AvatarFallback>
                     </Avatar>
                 </Link>
@@ -65,7 +65,7 @@ export const SellerDetails = ({
                     </div>
                 </div>
             </div>
-            <Button variant={"outline"} onClick={handleContactClick}>Contact me</Button>
+            <Button variant={"blue"} onClick={handleContactClick}>Contact me</Button>
             <div className="border border-black/20 p-4 space-y-3 rounded-2xl">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4">
                     <div>

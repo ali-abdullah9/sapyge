@@ -90,7 +90,7 @@ export const AddReview = ({
 
     return (
         <>
-            <h1 className="text-3xl font-bold text-neutral-700">Add review</h1>
+            <h1 className="text-3xl font-bold text-neutral-400">Add review</h1>
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                     {/* Comment Field */}
@@ -167,7 +167,7 @@ export const AddReview = ({
                         )}
                     />
 
-                    <Button type="submit">Submit</Button>
+                    <Button type="submit" variant={"save"}>Submit</Button>
                 </form>
             </Form>
         </>

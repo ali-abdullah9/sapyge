@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <nav>
       <SignedIn>
-        <div className="flex flex-row border-b border-n-6 lg:h-16 lg:backdrop-blur-sm">
+        <div className="flex flex-row lg:h-16 lg:backdrop-blur-sm">
           <div className="flex-1 flex items-center">
             <Link href="/" className="flex items-center gap-2 py-2">
               <Image src="/logo.svg" alt="sapyge-logo" width={50} height={50} />
@@ -53,15 +53,14 @@ const Header = () => {
                     className="cursor-pointer  md-980:hidden"
                   />
                 </SheetTrigger>
-                <SheetContent className="bg-dark-1 p-4 border-color-1">
+                <SheetContent className="p-4">
                   <SheetHeader>
                     <SheetTitle className="text-3xl font-bold text-light-1 mb-8 hover:text-color-1 cursor-not-allowed	">
                       Menu
                     </SheetTitle>
                     <SheetDescription>
                       <div className="space-y-4 ">
-                        {/* <Hamburgerbar /> */}
-                        <Navbar />
+                        <Hamburgerbar />
                       </div>
                     </SheetDescription>
                   </SheetHeader>
@@ -108,7 +107,7 @@ const Header = () => {
                   className="cursor-pointer  md-980:hidden"
                 />
               </SheetTrigger>
-              <SheetContent className="bg-dark-1 p-4 border-color-1">
+              <SheetContent className="">
                 <SheetHeader>
                   <SheetTitle className="text-3xl font-bold text-light-1 mb-8 hover:text-color-1 cursor-not-allowed	">
                     Menu

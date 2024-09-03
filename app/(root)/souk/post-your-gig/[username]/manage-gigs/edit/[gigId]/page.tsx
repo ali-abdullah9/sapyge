@@ -170,7 +170,7 @@ const Edit = ({ params }: EditdPageProps) => {
                     </div>
                 </form>
                 <div className="flex rounded-md border border-zinc-300 items-center space-x-4 w-fit p-2 cursor-default">
-                    <p className="text-muted-foreground"> Creator: {gig.seller.username}</p>
+                    <p className="text-muted-foreground"> Creator: {gig.seller.fullName}</p>
                 </div>
                 <OffersEditor
                     gigId={gig._id}

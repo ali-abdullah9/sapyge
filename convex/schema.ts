@@ -14,6 +14,7 @@ export default defineSchema({
         customTag: v.optional(v.string()),
         stripeAccountId: v.optional(v.string()),
         stripeAccountSetupComplete: v.optional(v.boolean()),
+        model: v.union(v.literal("gpt-3.5-turbo-1106"), v.literal("gpt-4-0125-preview")),
     })
         .index("by_token", ["tokenIdentifier"])
         .index("by_username", ["username"]),
@@ -130,4 +131,18 @@ export default defineSchema({
         .index("by_gig", ["gigId"])
         .index("by_user_gig", ["userId", "gigId"])
         .index("by_user", ["userId"]),
+        chats: defineTable({
+            userId: v.id("users"),
+            title: v.string(),
+        })
+            .index("by_userId", ["userId"]),
+        messagesSoaiw: defineTable({
+            role: v.union(
+                v.literal("user"),
+                v.literal("assistant")
+            ),
+            content: v.string(),
+            chatId: v.id("chats"),
+        })
+            .index("by_chatId", ["chatId"])
 });

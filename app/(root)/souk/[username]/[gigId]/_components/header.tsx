@@ -41,7 +41,7 @@ export const Header = ({ category, subcategory, editUrl, ownerId }: HeaderProps)
             md:text-md
             "
         >
-            <Link href="/">
+            <Link href="/souk/find-your-gig/">
                 <Home className="w-4 h-4" />
             </Link>
             <p className="text-muted-foreground cursor-default">/</p>
@@ -49,7 +49,7 @@ export const Header = ({ category, subcategory, editUrl, ownerId }: HeaderProps)
             <p className="text-muted-foreground cursor-default">/</p>
             <div className="font-medium cursor-pointer" onClick={handleSubcategoryClick}>{subcategory}</div>
             {(currentUser?._id === ownerId &&
-                <Button variant={"secondary"}>
+                <Button variant={"blue"}>
                     <Link href={editUrl}>
                         Edit gig
                     </Link>

@@ -17,12 +17,12 @@ const Hamburgerbar = () => {
 <NavigationMenu>
   <NavigationMenuList>
     <NavigationMenuItem>
-      <NavigationMenuTrigger className="bg-dark-1 px-4 text-light-1 focus:bg-dark-2 hover:text-color-1 hover:bg-dark-2 data-[active]:bg-dark-2 data-[state=open]:bg-dark-2 dark:bg-dark-1 dark:text-light-1 dark:focus:bg-dark-2 dark:hover:bg-dark-2 font-code">Tools</NavigationMenuTrigger>
+      <NavigationMenuTrigger className="px-4font-code">Tools</NavigationMenuTrigger>
       <NavigationMenuContent >
-        <NavigationMenuLink className="flex flex-col bg-dark-2 whitespace-nowrap ">
+        <NavigationMenuLink className="flex flex-col whitespace-nowrap ">
           <Link
                     href="/souk/find-your-gig"
-                    className="px-8 py-4 mt-2 text-sm font-semibold text-color-1 bg-dark-1 rounded-lg dark:bg-dark-1 dark:hover:bg-dark-2 dark:focus:bg-dark-2 dark:focus:text-color-1 dark:hover:text-color-1 dark:text-color-1 md:mt-0 hover:text-color-1 focus:text-color-1 hover:bg-dark-2 focus:bg-dark-2 focus:outline-none focus:shadow-outline">
+                    className="px-8 py-4 mt-2 text-sm font-semibold">
                     Find your Gig
                   </Link>
                   <Link

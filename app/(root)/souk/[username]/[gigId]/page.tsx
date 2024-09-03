@@ -1,6 +1,5 @@
 "use client";
 
-import { useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 import { Images } from "@/components/souk/images";
@@ -12,6 +11,8 @@ import { Seller } from "./_components/seller";
 import { Offers } from "./_components/offers";
 import { Header } from "./_components/header";
 import Loading from "@/components/auth/loading";
+import { Reviews } from "../_components/reviews/reviews";
+import { useQuery } from "convex/react";
 
 interface PageProps {
   params: {
@@ -21,6 +22,7 @@ interface PageProps {
 }
 
 const GigPage = ({ params }: PageProps) => {
+  const currentUser = useQuery(api.users.getCurrentUser, {});
   const gigId = params.gigId as Id<"gigs"> | undefined;
 
   if (!gigId) {
@@ -83,7 +85,6 @@ const GigPage = ({ params }: PageProps) => {
             editable={false}
             initialContent={gig.description}
             gigId={gig._id}
-            //className="pb-40 2xl:px-[200px] xl:px-[90px] xs:px-[17px]"
           />
           <div className="border border-zinc-400 p-4 space-y-2 rounded-2xl">
             <div className="flex space-x-2">
@@ -102,12 +103,13 @@ const GigPage = ({ params }: PageProps) => {
             lastFulFilmentTime={gig.lastFulfilment?.fulfilmentTime}
             languages={gig.seller.languages}
           />
-          {/* 
+        
                     <Reviews
                         reviews={reviewsFull}
                     />
-                     */}
+          {(currentUser?._id === gig.seller._id ? null:          
           <AddReview gigId={gig._id} sellerId={gig.seller._id} />
+          )}
         </div>
         <Offers offers={offers} sellerId={gig.seller._id} editUrl={editUrl} />
       </div>

@@ -7,21 +7,26 @@ import { Button } from "@/components/ui/button";
 
 const ConnectStripe = () => {
     const router = useRouter();
-
     const createStripe = useAction(api.users.createStripe);
 
-
-    return <div>
-        <Button
-            onClick={async () => {
-                const url = await createStripe({});
-                if (url === null) return;
-                router.push(url);
-            }}
-            variant={"blue"}
-        >
-            Connect stripe
-        </Button>
-    </div>;
+    return (
+        <div>
+            <Button
+                onClick={async () => {
+                    try {
+                        const url = await createStripe({});
+                        if (url === null) return;
+                        router.push(url);
+                    } catch (error) {
+                        console.error("Failed to create Stripe account:", error);
+                        alert("There was an issue connecting your Stripe account. Please try again later.");
+                    }
+                }}
+                variant={"blue"}
+            >
+                Connect Stripe
+            </Button>
+        </div>
+    );
 }
 export default ConnectStripe;

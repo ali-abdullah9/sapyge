@@ -34,6 +34,7 @@ export const store = mutation({
             about: "",
             username: identity.nickname!,
             profileImageUrl: identity.profileUrl,
+            model: "gpt-4-0125-preview"
         });
 
         return userId;
@@ -96,7 +97,7 @@ export const createStripe = action({
             return;
         }
         const stripe = new Stripe(process.env.NEXT_STRIPE_SECRET_KEY!, {
-            apiVersion: '2024-06-20',
+            apiVersion: '2023-08-16',
         });
 
         let accountId: string | null = await ctx.runQuery(internal.users.getStripeAccountId, { userId: user._id });
@@ -113,8 +114,8 @@ export const createStripe = action({
 
         const accountLink = await stripe.accountLinks.create({
             account: accountId,
-            refresh_url: process.env.NEXT_PUBLIC_HOSTING_URL,
-            return_url: `${process.env.NEXT_PUBLIC_HOSTING_URL}/stripe-account-setup-complete/${user._id}`,
+            refresh_url: process.env.NEXT_PUBLIC_BASE_URL,
+            return_url: `${process.env.NEXT_PUBLIC_BASE_URL}/souk/stripe-account-setup-complete/${user._id}`,
             type: 'account_onboarding',
         });
 
@@ -200,4 +201,71 @@ export const getCountryByUsername = query({
         }
         return country;
     },
+});
+
+export const selectGPT = mutation({
+    args: { model: v.union(v.literal("gpt-3.5-turbo-1106"), v.literal("gpt-4-0125-preview")) },
+    handler: async (ctx, args) => {
+        const identity = await ctx.auth.getUserIdentity();
+        if (!identity) {
+            throw new Error("Called selectGPT without authenticated user");
+        }
+
+        const user = await ctx.db
+            .query("users")
+            .withIndex("by_token", (q) =>
+                q.eq("tokenIdentifier", identity.tokenIdentifier))
+            .unique();
+
+        if (user === null) {
+            throw new Error("User not found");
+        }
+
+        await ctx.db.patch(user._id, {
+            model: args.model
+        });
+
+        return user._id;
+    }
+});
+
+export const storeChat = mutation({
+    args: {},
+    handler: async (ctx) => {
+        const identity = await ctx.auth.getUserIdentity();
+        if (!identity) {
+            throw new Error("Called storeUser without authenticated user");
+        }
+
+        // check if user is already stored
+        const user = await ctx.db
+            .query("users")
+            .withIndex("by_token", (q) =>
+                q.eq("tokenIdentifier", identity.tokenIdentifier))
+            .unique();
+
+        if (user !== null) {
+            const chat = await ctx.db
+                .query("chats")
+                .withIndex("by_userId", (q) =>
+                    q.eq("userId", user._id))
+                .first();
+
+            if (chat === null) {
+                const chatId = await ctx.db.insert("chats", {
+                    userId: user._id,
+                    title: "New Chat"
+                });
+                return chatId;
+            }
+            return chat._id;
+        }
+        const userId = user!._id
+        const chatId = await ctx.db.insert("chats", {
+            userId,
+            title: "New Chat"
+        });
+
+        return chatId;
+    }
 });
